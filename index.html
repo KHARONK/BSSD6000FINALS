@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head lang="en-IE">
+	<meta charset="utf-8">	
+	<title>Sharon stuff</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="css/style.css" rel="stylesheet" media="all">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/speech-commands"></script>
+
+</head>
+<body>
+	<main role="main">
+		<!-- <h1><abbr title="HyperText Markup Language 5">HTML5</abbr> Video Voice Control with the Web Speech <abbr title="Application Programming Interface">API</abbr></h1> -->
+		<div class="msg" data-state="hidden">This browser doesn't support the WebKit Web Speech <abbr title="Application Programming Interface">API</abbr>. You need the latest version of Chrome. Sorry!</div>
+		<video id="v" controls preload="metadata">
+			<source src="video/big-buck-bunny.mp4" type="video/mp4">
+		</video><br />
+		<video id="sec-video" style="display: none;" controls preload="metadata">
+			<source src="video/big-buck-bunny2.mp4" type="video/mp4">
+		</video>
+		<div class="rec-status">Recogniser status:<span id="recStatus">not recognising</span></div>
+		<button id="startRecBtn">Start Recognition</button>
+		<button id="stopRecBtn">Stop Recognition</button>
+		<p>Click "Start Recognition", give microphone access permission and start controlling the video's playback, mute and volume control via speech.<br>Available commands are:</p>
+		<ul>
+			<li id="vidPlay"><strong>" play"</strong> This command is to play first video.</li>
+			<li id="vidMeNext"><strong>" Video 2" </strong>This command is to play the next video.</li>
+			<li id="vidStop"><strong>" stop"</strong> This is to stop first video.</li>
+			<li id="vidStopNext"><strong>" Pause"</strong>This is to stop Next video.</li>
+			<li id="vidNext"><strong>" Next"</strong>Go to the next video , but don't play the play the next video.</li>
+			<li id="vidReplay"><strong>" replay"</strong>This is to replay the first video.</li>
+			<li id="vidAgain"><strong>" Again"</strong>This is to replay the first video.</li>
+			<li id="vidVolOn"><strong>" volume on"</strong>Umute the voulume of the first video.</li>
+			<li id="vidVolOnNext"><strong>"umute "</strong> Umute the voume of the second video.</li>
+			<li id="vidVolOff"><strong>" volume off"</strong> Mute the voulume of the first video.</li>
+			<li id="vidVolOffNext"><strong>" mute"</strong> mUte the volume of the second video.</li>
+			<li id="vidVolInc"><strong>" volume increase"</strong>Increases the volume of the first video.</li>
+			<li id="vidVolIncNext"><strong>" second Increase"</strong> Increase the volume of the next video.</li>
+			<li id="vidVolDec"><strong>" volume decrease "</strong>Decrease the volume of the first video.</li>
+			<li id="vidVolDecNext"><strong>" second decrease"</strong> Decrease the volume of the second video.</li>
+		</ul>
+	</main>
+	<script src="js/video-speech.js" defer></script>
+	<script>
+		var _gaq=[['_setAccount','UA-2046650-1'],['_trackPageview']];(function(a,b){var c=a.createElement(b),d=a.getElementsByTagName(b)[0];c.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";d.parentNode.insertBefore(c,d)})(document,"script");
+	</script>
+</body>
+</html>
